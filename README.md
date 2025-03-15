@@ -12,7 +12,7 @@ let y = 10;
 ```
 a) A saída será undefined seguido de erro 
 
-Justificativa: O var x foi definido apos ser chamado e isso causou o retorno undefined, enquanto o y so foi criado apos ser chamado gerando um outro erro.
+Justificativa: var x sofre hoisting, mas seu valor é undefined até ser atribuído. Já let y também sofre hoisting, mas não pode ser acessado antes da declaração, gerando erro.
 
 ______
 **2) O seguinte código JavaScript tem um erro que impede sua execução correta. Analise e indique a opção que melhor corrige o problema. Justifique sua resposta.**
@@ -58,7 +58,7 @@ console.log(calcularPreco("eletrônico"));
 
 b) O código imprime 200.
 
-Justificativa: Como não há break após case "eletrônico", o código segue para o próximo case e sobrescreve preco para 200.
+Justificativa: Sem break no case "eletrônico", o código continua para case "vestuário", alterando preco para 200.
 ______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
 ```javascript
@@ -70,7 +70,7 @@ console.log(resultado);
 ```
 d) 24
 
-Justificativa: O map dobra os valores [2, 4, 6, 8, 10], o filter mantém [6, 8, 10] e o reduce soma 6 + 8 + 10 = 24.
+Justificativa: O map gera [2, 4, 6, 8, 10], o filter mantém [6, 8, 10] e o reduce soma 6 + 8 + 10 = 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
@@ -82,7 +82,7 @@ console.log(lista);
 
 c) ["banana", "abacaxi", "manga", "laranja"]
 
-Justificativa: O splice(1, 2, "abacaxi", "manga") remove "maçã" e "uva" e insere "abacaxi" e "manga" na posição 1.
+Justificativa: splice(1, 2, "abacaxi", "manga") remove "maçã" e "uva", adicionando "abacaxi" e "manga" no lugar.
 ______
 **6) Abaixo há duas afirmações sobre herança em JavaScript. Indique a alternativa correta e justifique sua resposta**
 
@@ -92,7 +92,7 @@ II. Em JavaScript, a herança é implementada através da palavra-chave `extends
 
 a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
 
-Justificativa: A herança permite reuso de código e é implementada em JavaScript com extends.
+Justificativa: A herança evita repetição de código e, em JavaScript, é implementada com extends.
 
 ______
 **7) Dado o seguinte código. Indique a alternativa correta e justifique sua resposta.**
@@ -131,8 +131,7 @@ Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
 a) I e II são verdadeiras.
 
-Justificativa: A classe Funcionario herda de Pessoa e pode acessar nome e idade. O método apresentar() de Funcionario chama o da classe pai com super.
-
+Justificativa: A classe Funcionario herda de Pessoa, acessando nome e idade. O método apresentar() chama super.apresentar(), preservando a funcionalidade da classe pai.
 ______
 
 **8) Analise as afirmações a seguir. Indique a alternativa correta e justifique sua resposta.**
@@ -142,7 +141,7 @@ ______
 
 b) A asserção é verdadeira e a razão é falsa.
 
-Justificativa: O polimorfismo permite diferentes respostas a uma mesma chamada, mas JavaScript não consegue suportar sobrecarga de métodos como em Java.
+Justificativa: O polimorfismo permite métodos com mesmo nome em diferentes classes, mas JavaScript não suporta sobrecarga de métodos.
 
 ______
 
