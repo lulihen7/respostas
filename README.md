@@ -206,7 +206,4 @@ console.log(livro.calcularDesconto()); // 80
 
 Explicação:
 
-Livro herda de Produto, reutilizando nome e preco.
-O método calcularDesconto() de Livro sobrescreve o da classe produto, aplicando 20% de desconto.
-Isso demonstra polimorfismo: objetos diferentes (Produto e Livro) respondem de formas distintas ao mesmo método calcularDesconto().
-
+A classe Produto contém um método calcularDesconto() que aplica um desconto padrão de 10%. A classe Livro herda de Produto, aproveitando seus atributos e métodos, mas substitui calcularDesconto() para aplicar um desconto maior, de 20%. Isso demonstra polimorfismo, pois ambas as classes possuem o mesmo método, mas com implementações diferentes.
